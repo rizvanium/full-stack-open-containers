@@ -1,0 +1,94 @@
+Script started on 2023-10-31 11:50:42+02:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="146" LINES="30"]
+[1m[7m%[27m[1m[0m                                                                                                                                                  ]2;rizvanium@Rizvanium:~/code/personal/fullstackopen/part12/full-stack-open-containers/todo-app/todo-backend]1;../todo-backend]7;file://Rizvanium/home/rizvanium/code/personal/fullstackopen/part12/full-stack-open-containers/todo-app/todo-backend\[0m[27m[24m[J
+[1;36mfull-stack-open-containers/todo-app/todo-backend[0m on [1;35m [0m[1;35mmain[0m [1;31m[[0m[1;31m?[0m[1;31m][0m via [1;32m [0m[1;32mv18.14.2[0m[1;32m [0m
+[1;32m❯[0m [K[?1h=[?2004h[1m[31ms[0m[39m[0m[32ms[32mu[39m[90mdo docker exec -it todo-backend-mongo-1 mongosh -u root -p example[39m[66D[1m[31ms[1m[31mu[1m[31md[0m[39m[0m[4m[32ms[0m[4m[32mu[0m[4m[32md[4m[32mo[24m[39m[39m [32md[32mo[32mc[32mk[32me[32mr[39m[39m [39me[39mx[39me[39mc[39m [39m-[39mi[39mt[39m [39mt[39mo[39md[39mo[39m-[39mb[39ma[39mc[39mk[39me[39mn[39md[39m-[39mm[39mo[39mn[39mg[39mo[39m-[39m1[39m [39mm[39mo[39mn[39mg[39mo[39ms[39mh[39m [39m-[39mu[39m [39mr[39mo[39mo[39mt[39m [39m-[39mp[39m [39me[39mx[39ma[39mm[39mp[39ml[39me[?1l>[?2004l
+]2;sudo docker exec -it todo-backend-mongo-1 mongosh -u root -p example]1;docker[sudo] password for rizvanium: 
+]0;mongosh mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000Current Mongosh Log ID:	6540ce02fc65a5b8e9ad385e
+Connecting to:		[1m[32mmongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.0.1[0m
+Using MongoDB:		7.0.2
+[1m[33mUsing Mongosh[0m:		2.0.1
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+[1G[0J [1G[1m[33m------[0m
+   [1m[33mThe server generated these startup warnings when booting[0m
+   2023-10-31T09:31:28.530+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+   2023-10-31T09:31:29.077+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+   2023-10-31T09:31:29.077+00:00: vm.max_map_count is too low
+[1m[33m------[0m
+
+[1G[0Jtest> [7Gshow dbs
+[1madmin[0m         100.00 KiB
+[1mconfig[0m         96.00 KiB
+[1mlocal[0m          72.00 KiB
+[1mthe_database[0m   72.00 KiB
+[1G[0Jtest> [7Guse the_database
+switched to db the_database
+[1G[0Jthe_database> [15Gshow collections
+[1mtodos[0m
+[1G[0Jthe_database> [15Gdb.todos.s[1G[0Jthe_database> db.todos.[24Gfind({})
+[
+  {
+    _id: ObjectId("653ec8f7f885e911b268d0e5"),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("653ec8f7f885e911b268d0e6"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId("653f8114bffd2356fe220ee4"),
+    text: [32m'Test todo creation'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("653f8126bffd2356fe220ee7"),
+    text: [32m'Test todo update'[39m,
+    done: [33mtrue[39m,
+    __v: [33m0[39m
+  }
+]
+[1G[0Jthe_database> [15Gdb.tpdps[1G[0Jthe_database> db.tpdp[22G[1G[0Jthe_database> db.tpd[21G[1G[0Jthe_database> db.tp[20G[1G[0Jthe_database> db.t[19G[1G[0Jthe_database> db.[18Gtodos.insertOne()[1D[1G[0Jthe_database> db.todos.insertOne[44m([49m)[34G[1G[0Jthe_database> db.todos.insertOne[44m([49m{)[35G[1G[0Jthe_database> db.todos.insertOne[44m([49m{})[36G[1D[1G[0Jthe_database> db.todos.insertOne([44m{[49m})[35G[1G[0Jthe_database> db.todos.insertOne([44m{[49mt})[36G[1G[0Jthe_database> db.todos.insertOne([44m{[49mte})[37G[1G[0Jthe_database> db.todos.insertOne([44m{[49mtex})[38G[1G[0Jthe_database> db.todos.insertOne([44m{[49mtext})[39G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:})[40G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"})[39m[41G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m""[39m})[42G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m""[39m,})[43G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m""[39m, })[44G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m""[39m, d})[45G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m""[39m, [36mdo[39m})[46G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m""[39m, don})[47G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m""[39m, done})[48G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m""[39m, [33mdone[39m:})[49G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m""[39m, [33mdone[39m: })[50G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m""[39m, [33mdone[39m: f})[51G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m""[39m, [33mdone[39m: fa})[52G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m""[39m, [33mdone[39m: fal})[53G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m""[39m, [33mdone[39m: fals})[54G[1G[0Jthe_database> db.todos.insertOne([44m{[49m[33mtext[39m:[32m""[39m, [33mdone[39m: [33mfalse[39m})[55G[1D[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m""[39m, [33mdone[39m: [33mfalse[39m})[54G[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49m"[39m, [33mdone[39m: [33mfalse[39m})[41G[1C[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m""[39m, [33mdone[39m: [33mfalse[39m})[42G[1D[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49m"[39m, [33mdone[39m: [33mfalse[39m})[41G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mI"[39m, [33mdone[39m: [33mfalse[39m})[42G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIN"[39m, [33mdone[39m: [33mfalse[39m})[43G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mINc"[39m, [33mdone[39m: [33mfalse[39m})[44G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIN"[39m, [33mdone[39m: [33mfalse[39m})[43G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mI"[39m, [33mdone[39m: [33mfalse[39m})[42G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIn"[39m, [33mdone[39m: [33mfalse[39m})[43G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mInc"[39m, [33mdone[39m: [33mfalse[39m})[44G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncr"[39m, [33mdone[39m: [33mfalse[39m})[45G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncre"[39m, [33mdone[39m: [33mfalse[39m})[46G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrea"[39m, [33mdone[39m: [33mfalse[39m})[47G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncreas"[39m, [33mdone[39m: [33mfalse[39m})[48G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease"[39m, [33mdone[39m: [33mfalse[39m})[49G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease "[39m, [33mdone[39m: [33mfalse[39m})[50G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease t"[39m, [33mdone[39m: [33mfalse[39m})[51G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease th"[39m, [33mdone[39m: [33mfalse[39m})[52G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the"[39m, [33mdone[39m: [33mfalse[39m})[53G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the "[39m, [33mdone[39m: [33mfalse[39m})[54G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the n"[39m, [33mdone[39m: [33mfalse[39m})[55G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the nu"[39m, [33mdone[39m: [33mfalse[39m})[56G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the num"[39m, [33mdone[39m: [33mfalse[39m})[57G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the numb"[39m, [33mdone[39m: [33mfalse[39m})[58G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the numbe"[39m, [33mdone[39m: [33mfalse[39m})[59G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number"[39m, [33mdone[39m: [33mfalse[39m})[60G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number "[39m, [33mdone[39m: [33mfalse[39m})[61G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number o"[39m, [33mdone[39m: [33mfalse[39m})[62G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of"[39m, [33mdone[39m: [33mfalse[39m})[63G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of "[39m, [33mdone[39m: [33mfalse[39m})[64G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of t"[39m, [33mdone[39m: [33mfalse[39m})[65G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of to"[39m, [33mdone[39m: [33mfalse[39m})[66G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of too"[39m, [33mdone[39m: [33mfalse[39m})[67G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tool"[39m, [33mdone[39m: [33mfalse[39m})[68G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools"[39m, [33mdone[39m: [33mfalse[39m})[69G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools "[39m, [33mdone[39m: [33mfalse[39m})[70G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools u"[39m, [33mdone[39m: [33mfalse[39m})[71G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools un"[39m, [33mdone[39m: [33mfalse[39m})[72G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools und"[39m, [33mdone[39m: [33mfalse[39m})[73G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools unde"[39m, [33mdone[39m: [33mfalse[39m})[74G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools under"[39m, [33mdone[39m: [33mfalse[39m})[75G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools under "[39m, [33mdone[39m: [33mfalse[39m})[76G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools under m"[39m, [33mdone[39m: [33mfalse[39m})[77G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools under my"[39m, [33mdone[39m: [33mfalse[39m})[78G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools under my "[39m, [33mdone[39m: [33mfalse[39m})[79G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools under my t"[39m, [33mdone[39m: [33mfalse[39m})[80G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools under my to"[39m, [33mdone[39m: [33mfalse[39m})[81G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools under my too"[39m, [33mdone[39m: [33mfalse[39m})[82G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools under my tool"[39m, [33mdone[39m: [33mfalse[39m})[83G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools under my toolb"[39m, [33mdone[39m: [33mfalse[39m})[84G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools under my toolbe"[39m, [33mdone[39m: [33mfalse[39m})[85G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools under my toolbel"[39m, [33mdone[39m: [33mfalse[39m})[86G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[44m[32m"[49mIncrease the number of tools under my toolbelt"[39m, [33mdone[39m: [33mfalse[39m})[87G[1D[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools under my toolbelt"[39m, [33mdone[39m: [33mfalse[39m})[86G[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1D[1C[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools unde my toolbelt"[39m, [33mdone[39m: [33mfalse[39m})[74G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools und my toolbelt"[39m, [33mdone[39m: [33mfalse[39m})[73G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools un my toolbelt"[39m, [33mdone[39m: [33mfalse[39m})[72G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools u my toolbelt"[39m, [33mdone[39m: [33mfalse[39m})[71G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools  my toolbelt"[39m, [33mdone[39m: [33mfalse[39m})[70G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools i my toolbelt"[39m, [33mdone[39m: [33mfalse[39m})[71G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools in my toolbelt"[39m, [33mdone[39m: [33mfalse[39m})[72G[1C[27C
+{
+  acknowledged: [33mtrue[39m,
+  insertedId: ObjectId("6540ce88fc65a5b8e9ad385f")
+}
+[1G[0Jthe_database> [15G[1G[0Jthe_database> db.todos.insertOne({[33mtext[39m:[32m"Increase the number of tools in my toolbelt"[39m, [33mdone[39m: [33mfalse[39m})[100G[1G[0Jthe_database> db.todos.find({})[32G
+[
+  {
+    _id: ObjectId("653ec8f7f885e911b268d0e5"),
+    text: [32m'Write code'[39m,
+    done: [33mtrue[39m
+  },
+  {
+    _id: ObjectId("653ec8f7f885e911b268d0e6"),
+    text: [32m'Learn about containers'[39m,
+    done: [33mfalse[39m
+  },
+  {
+    _id: ObjectId("653f8114bffd2356fe220ee4"),
+    text: [32m'Test todo creation'[39m,
+    done: [33mfalse[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("653f8126bffd2356fe220ee7"),
+    text: [32m'Test todo update'[39m,
+    done: [33mtrue[39m,
+    __v: [33m0[39m
+  },
+  {
+    _id: ObjectId("6540ce88fc65a5b8e9ad385f"),
+    text: [32m'Increase the number of tools in my toolbelt'[39m,
+    done: [33mfalse[39m
+  }
+]
+[1G[0Jthe_database> [15Gexit
+[1m[7m%[27m[1m[0m                                                                                                                                                  ]2;rizvanium@Rizvanium:~/code/personal/fullstackopen/part12/full-stack-open-containers/todo-app/todo-backend]1;../todo-backend]7;file://Rizvanium/home/rizvanium/code/personal/fullstackopen/part12/full-stack-open-containers/todo-app/todo-backend\[0m[27m[24m[J
+[1;36mfull-stack-open-containers/todo-app/todo-backend[0m on [1;35m [0m[1;35mmain[0m [1;31m[[0m[1;31m?[0m[1;31m][0m via [1;32m [0m[1;32mv18.14.2[0m[1;32m [0mtook [1;33m2m40s[0m 
+[1;32m❯[0m [K[?1h=[?2004h[1m[31me[0m[39m[1m[31me[0m[39m[90mxit[39m[0m[32me[32mx[39m[1m[31me[1m[31mx[1m[31mi[0m[39m[0m[32me[0m[32mx[0m[32mi[32mt[39m[?1l>[?2004l
+]2;exit]1;exit
+Script done on 2023-10-31 11:53:31+02:00 [COMMAND_EXIT_CODE="0"]
