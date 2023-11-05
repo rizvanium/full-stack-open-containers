@@ -3,7 +3,7 @@ services:
     image: todo-frontend-dev
     build:
       context: .
-      dockerfile: dev.dockerfile
+      dockerfile: dev.Dockerfile
     volumes:
       - ./:/usr/src/app
     ports:
