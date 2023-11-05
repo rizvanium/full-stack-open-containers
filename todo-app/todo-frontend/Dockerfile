@@ -4,13 +4,13 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-ENV REACT_APP_BACKEND_URL=http://localhost:3000
+ARG BACKEND_URL
+
+ENV REACT_APP_BACKEND_URL=$BACKEND_URL
 ENV CI=true
 
 RUN npm ci
-
 RUN npm test
-
 RUN npm run build
 
 FROM nginx:1.20-alpine
