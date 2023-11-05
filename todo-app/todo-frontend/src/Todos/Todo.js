@@ -3,7 +3,7 @@ const Todo = ({ todo, handleComplete, handleDelete }) => {
     <>
       <span>This todo is done</span>
       <span>
-        <button onClick={() => handleDelete(todo)}> Delete </button>
+        <button onClick={() => handleDelete()}> Delete </button>
       </span>
     </>
   )
@@ -14,8 +14,8 @@ const Todo = ({ todo, handleComplete, handleDelete }) => {
         This todo is not done
       </span>
       <span>
-        <button onClick={() => handleDelete(todo)}> Delete </button>
-        <button onClick={() => handleComplete(todo)}> Set as done </button>
+        <button onClick={() => handleDelete()}> Delete </button>
+        <button onClick={() => handleComplete()}> Set as done </button>
       </span>
     </>
   )
