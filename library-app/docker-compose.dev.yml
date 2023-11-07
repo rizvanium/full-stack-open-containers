@@ -1,0 +1,25 @@
+services:
+  library-backend:
+    env_file:
+      - ./books-graphql-backend/.env.dev
+    image: library-backend-dev
+    build:
+      context: ./books-graphql-backend
+      dockerfile: ./dev.Dockerfile
+    volumes:
+      - ./books-graphql-backend:/usr/src/app
+    ports:
+      - 4000:4000
+    container_name: library-backend-dev
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: the_database
+    volumes:
+      - ./books-graphql-backend/seed.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - ./books-graphql-backend/mongo_data:/data/db
