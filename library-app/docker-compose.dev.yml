@@ -1,4 +1,17 @@
 services:
+  library-frontend:
+    image: library-frontend-dev
+    build:
+      context: ./books-graphql-frontend
+      dockerfile: ./dev.Dockerfile
+    volumes:
+     - ./books-graphql-frontend:/usr/src/app
+    ports:
+      - 3000:3000
+    container_name: library-frontend-dev
+    depends_on:
+      - library-backend
+
   library-backend:
     env_file:
       - ./books-graphql-backend/.env.dev
