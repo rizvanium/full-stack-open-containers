@@ -1,7 +1,7 @@
 services:
   library-frontend:
     env_file:
-      - ./books-graphql-frontend/.env.development
+      - ./books-graphql-frontend/.env.production
     image: library-frontend
     build:
       context: ./books-graphql-frontend
@@ -34,3 +34,14 @@ services:
     volumes:
       - ./books-graphql-backend/seed.js:/docker-entrypoint-initdb.d/mongo-init.js
       - ./books-graphql-backend/mongo_data:/data/db
+
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - library-frontend
+      - library-backend
