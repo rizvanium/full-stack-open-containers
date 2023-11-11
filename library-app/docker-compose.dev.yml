@@ -1,13 +1,16 @@
 services:
   library-frontend:
+    env_file:
+      - ./books-graphql-frontend/.env.development
     image: library-frontend-dev
     build:
+      args:
+      - BACKEND_URI=http://localhost:8080/graphql
+      - WS_BACKEND_URI=ws://localhost:8080/ws
       context: ./books-graphql-frontend
       dockerfile: ./dev.Dockerfile
     volumes:
      - ./books-graphql-frontend:/usr/src/app
-    ports:
-      - 3000:3000
     container_name: library-frontend-dev
     depends_on:
       - library-backend
@@ -21,8 +24,6 @@ services:
       dockerfile: ./dev.Dockerfile
     volumes:
       - ./books-graphql-backend:/usr/src/app
-    ports:
-      - 4000:4000
     container_name: library-backend-dev
     depends_on:
       - mongo
@@ -36,3 +37,14 @@ services:
     volumes:
       - ./books-graphql-backend/seed.js:/docker-entrypoint-initdb.d/mongo-init.js
       - ./books-graphql-backend/mongo_data:/data/db
+
+  nginx:
+    image: nginx:1.20.1
+    volumes:
+      - ./nginx.dev.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - 8080:80
+    container_name: reverse-proxy
+    depends_on:
+      - library-frontend
+      - library-backend

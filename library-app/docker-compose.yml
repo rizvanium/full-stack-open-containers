@@ -1,0 +1,36 @@
+services:
+  library-frontend:
+    env_file:
+      - ./books-graphql-frontend/.env.development
+    image: library-frontend
+    build:
+      context: ./books-graphql-frontend
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./books-graphql-frontend:/usr/src/app
+    container_name: library-frontend
+    depends_on:
+      - library-backend
+
+  library-backend:
+    env_file:
+      - ./books-graphql-backend/.env.prod
+    image: library-backend
+    build:
+      context: ./books-graphql-backend
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./books-graphql-backend:/usr/src/app
+    container_name: library-backend
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_DATABASE: the_database
+    volumes:
+      - ./books-graphql-backend/seed.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - ./books-graphql-backend/mongo_data:/data/db

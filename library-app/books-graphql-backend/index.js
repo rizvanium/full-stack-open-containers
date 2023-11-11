@@ -35,7 +35,7 @@ const start = async () => {
   const httpServer = http.createServer(app);
   const wsServer = new WebSocketServer({
     server: httpServer,
-    path: '/',
+    path: '/ws',
   });
 
   const schema = makeExecutableSchema({ typeDefs, resolvers });

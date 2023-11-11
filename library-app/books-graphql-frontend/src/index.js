@@ -25,7 +25,7 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const httpLink = authLink.concat(
-  createHttpLink({ uri: process.env.REACT_APP_BACKEND_URI })
+  createHttpLink(process.env.REACT_APP_BACKEND_URI)
 );
 
 const wsLink = new GraphQLWsLink(
